@@ -6,8 +6,6 @@ This repository contains screenshots and proof of my AWS hands-on practice. It d
 
 - Amazon EC2 Instance Creation
 - Website Hosting with Apache on Ubuntu
-- SSH Remote Connection
-- SCP Secure File Transfer
 - IAM User Creation and Permissions
 - Amazon S3 Bucket
 - Security Groups Configuration
