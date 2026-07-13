@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Path</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Career Path</h1>
+    <p>Explore Your Future After 10th Class</p>
+</header>
+
+<div id="homePage">
+
+    <div class="cards">
+
+        <div class="card" onclick="showPage('engineering')">
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600">
+            <h2>Engineering</h2>
+        </div>
+
+        <div class="card" onclick="showPage('medical')">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600">
+            <h2>Medical</h2>
+        </div>
+
+        <div class="card" onclick="showPage('commerce')">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600">
+            <h2>Commerce</h2>
+        </div>
+
+        <div class="card" onclick="showPage('diploma')">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600">
+            <h2>Diploma</h2>
+        </div>
+
+        <div class="card" onclick="showPage('iti')">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600">
+            <h2>ITI</h2>
+        </div>
+
+        <div class="card" onclick="showPage('agriculture')">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600">
+            <h2>Agriculture</h2>
+        </div>
+
+        <div class="card" onclick="showPage('degree')">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600">
+            <h2>Degree</h2>
+        </div>
+
+        <div class="card" onclick="showPage('government')">
+            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600">
+            <h2>Government Jobs</h2>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="careerPage" style="display:none;">
+    <div class="career-box">
+        <button onclick="goHome()">← Back</button>
+        <div id="careerContent"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
