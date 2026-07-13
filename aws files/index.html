@@ -1,189 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Loan Eligibility Prediction</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin: 0;
-      padding: 20px;
-    }
-
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      width: 420px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #2a5298;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #2a5298;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background: #1e3c72;
-    }
-
-    .result {
-      margin-top: 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .eligible {
-      color: green;
-    }
-
-    .not-eligible {
-      color: red;
-    }
-
-    .history {
-      background: white;
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 15px;
-      width: 420px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .history h3 {
-      margin-bottom: 10px;
-      color: #2a5298;
-    }
-
-    .history-item {
-      font-size: 14px;
-      padding: 8px;
-      border-bottom: 1px solid #eee;
-      white-space: pre-line;
-      text-align: left;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Path</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
-  <h2>Loan Eligibility Predictor</h2>
+<header>
+    <h1>Career Path</h1>
+    <p>Explore Your Future After 10th Class</p>
+</header>
 
-  <input type="number" id="age" placeholder="Enter Your Age" min="1" />
-  <input type="number" id="income" placeholder="Enter Monthly Income" min="0" />
-  <input type="number" id="loanAmount" placeholder="Enter Loan Amount" min="0" />
+<div id="homePage">
 
-  <select id="creditHistory">
-    <option value="">Select Credit History</option>
-    <option value="1">Good</option>
-    <option value="0">Bad</option>
-  </select>
+    <div class="cards">
 
-  <select id="employment">
-    <option value="">Employment Type</option>
-    <option value="salaried">Salaried</option>
-    <option value="self">Self-Employed</option>
-  </select>
+        <div class="card" onclick="showPage('engineering')">
+            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600">
+            <h2>Engineering</h2>
+        </div>
 
-  <button onclick="predictLoan()">Check Eligibility</button>
+        <div class="card" onclick="showPage('medical')">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600">
+            <h2>Medical</h2>
+        </div>
 
-  <div class="result" id="result"></div>
+        <div class="card" onclick="showPage('commerce')">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600">
+            <h2>Commerce</h2>
+        </div>
+
+        <div class="card" onclick="showPage('diploma')">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600">
+            <h2>Diploma</h2>
+        </div>
+
+        <div class="card" onclick="showPage('iti')">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600">
+            <h2>ITI</h2>
+        </div>
+
+        <div class="card" onclick="showPage('agriculture')">
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600">
+            <h2>Agriculture</h2>
+        </div>
+
+        <div class="card" onclick="showPage('degree')">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600">
+            <h2>Degree</h2>
+        </div>
+
+        <div class="card" onclick="showPage('government')">
+            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600">
+            <h2>Government Jobs</h2>
+        </div>
+
+    </div>
+
 </div>
 
-<div class="history">
-  <h3>Prediction History</h3>
-  <div id="historyList"></div>
+<div id="careerPage" style="display:none;">
+    <div class="career-box">
+        <button onclick="goHome()">← Back</button>
+        <div id="careerContent"></div>
+    </div>
 </div>
 
-<script>
-let historyData = [];
-
-function predictLoan() {
-  const age = parseInt(document.getElementById("age").value);
-  const income = parseFloat(document.getElementById("income").value);
-  const loanAmount = parseFloat(document.getElementById("loanAmount").value);
-  const creditHistory = document.getElementById("creditHistory").value;
-  const employment = document.getElementById("employment").value;
-  const resultDiv = document.getElementById("result");
-
-  if (!age || !income || !loanAmount || creditHistory === "" || employment === "") {
-    resultDiv.innerHTML = "Please fill all fields!";
-    resultDiv.className = "result not-eligible";
-    return;
-  }
-
-  if (age < 18) {
-    resultDiv.innerHTML = "❌ You must be at least 18 years old to apply.";
-    resultDiv.className = "result not-eligible";
-    return;
-  }
-
-  let eligible = false;
-
-  if (income >= 30000 && loanAmount <= 500000) {
-    eligible = true;
-  }
-
-  if (eligible) {
-    resultDiv.innerHTML = "✅ Congratulations! You are Eligible for the Loan.";
-    resultDiv.className = "result eligible";
-  } else {
-    resultDiv.innerHTML = "❌ Sorry! You are Not Eligible for the Loan.";
-    resultDiv.className = "result not-eligible";
-  }
-
-  const statusText = eligible ? "Eligible" : "Not Eligible";
-
-  const record = `
-Age: ${age}
-Monthly Income: ₹${income}
-Loan Amount: ₹${loanAmount}
-Credit History: ${creditHistory === "1" ? "Good" : "Bad"}
-Employment Type: ${employment}
-Result: ${statusText}
-`;
-
-  historyData.push(record);
-  displayHistory();
-}
-
-function displayHistory() {
-  const historyList = document.getElementById("historyList");
-  historyList.innerHTML = "";
-
-  historyData.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "history-item";
-    div.textContent = item;
-    historyList.appendChild(div);
-  });
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
