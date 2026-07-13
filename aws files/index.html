@@ -1,74 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Path</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kadari Naga Lakshman | Cloud Engineer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#0b1120;color:#fff;line-height:1.7}
+header{min-height:100vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:40px;background:linear-gradient(135deg,#0f172a,#1e293b)}
+.hero{max-width:900px}.hero h1{font-size:56px;color:#38bdf8}.hero h2{color:#cbd5e1;margin:10px 0}.hero p{color:#94a3b8;margin-top:20px}
+.buttons{margin-top:30px}.btn{display:inline-block;margin:8px;padding:14px 28px;background:#38bdf8;color:#000;text-decoration:none;border-radius:10px;font-weight:bold}
+section{padding:70px 10%}.title{text-align:center;color:#38bdf8;margin-bottom:35px}
+.card{background:#1e293b;padding:25px;border-radius:15px;margin-bottom:20px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.project{border-left:5px solid #38bdf8}ul{padding-left:20px}li{margin:8px 0}a{color:#38bdf8}
+footer{background:#020617;text-align:center;padding:20px;color:#94a3b8}
+</style></head><body>
+<header><div class="hero">
+<h1>KADARI NAGA LAKSHMAN</h1>
+<h2>☁️ Aspiring Cloud Engineer</h2>
+<p>Aspiring Cloud Engineer with hands-on experience in AWS including EC2, S3, IAM, VPC and Application Load Balancer. Familiar with Ubuntu Linux, networking fundamentals and website deployment.</p>
+<div class="buttons">
+<a class="btn" href="#projects">Projects</a>
+<a class="btn" href="https://linkedin.com/in/naga-lakshman-kadari-8396392bb">LinkedIn</a>
+<a class="btn" href="https://github.com/lakshman5432">GitHub</a>
+<a class="btn" href="https://lakshman5432.github.io/Portfolio-Website/">Portfolio</a>
+</div></div></header>
 
-<header>
-    <h1>Career Path</h1>
-    <p>Explore Your Future After 10th Class</p>
-</header>
+<section><h2 class="title">About Me</h2><div class="card">Passionate about AWS and Cloud Computing with practical experience in S3 website hosting, EC2 deployment, Application Load Balancer configuration and Linux server administration.</div></section>
 
-<div id="homePage">
+<section><h2 class="title">Technical Skills</h2><div class="skills">
+<div class="card"><h3>☁️ Cloud</h3><ul><li>AWS EC2</li><li>AWS S3</li><li>AWS IAM</li><li>AWS VPC</li><li>Application Load Balancer</li></ul></div>
+<div class="card"><h3>💻 Operating System</h3><ul><li>Ubuntu Linux</li><li>File & Directory Management</li><li>Search Commands</li><li>File Permissions</li><li>Process & Service Management</li><li>Disk & Memory Management</li><li>Package Management</li></ul></div>
+<div class="card"><h3>🌐 Networking</h3><ul><li>TCP/IP</li><li>IP Addressing</li><li>DNS</li><li>HTTP/HTTPS</li><li>SSH</li><li>SCP</li><li>Security Groups</li></ul></div>
+<div class="card"><h3>🛠 Programming & Tools</h3><ul><li>Python (Basic)</li><li>C (Basic)</li><li>MySQL (Basic)</li><li>Git</li><li>GitHub</li><li>VS Code</li></ul></div>
+</div></section>
 
-    <div class="cards">
+<section id="projects"><h2 class="title">Projects</h2>
+<div class="card project"><h3>AWS Static Website Hosting using Amazon S3</h3><ul><li>Hosted static website using Amazon S3.</li><li>Configured static website hosting.</li><li>Managed website assets.</li><li>Configured IAM permissions.</li></ul><p><a href="http://carrier123.s3-website-ap-southeast-2.amazonaws.com/">Live Website</a></p></div>
+<div class="card project"><h3>AWS Application Load Balancer (ALB)</h3><ul><li>Configured ALB across EC2 instances.</li><li>Health checks.</li><li>Traffic distribution.</li><li>Improved availability.</li></ul></div>
+<div class="card project"><h3>Portfolio Website Hosting on AWS EC2</h3><ul><li>Hosted portfolio on EC2.</li><li>Configured Apache.</li><li>Configured Security Groups.</li></ul><p><a href="https://lakshman5432.github.io/Portfolio-Website/">Live Portfolio</a> | <a href="https://github.com/lakshman5432/Portfolio-Website">Source Code</a></p></div>
+</section>
 
-        <div class="card" onclick="showPage('engineering')">
-            <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600">
-            <h2>Engineering</h2>
-        </div>
-
-        <div class="card" onclick="showPage('medical')">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600">
-            <h2>Medical</h2>
-        </div>
-
-        <div class="card" onclick="showPage('commerce')">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600">
-            <h2>Commerce</h2>
-        </div>
-
-        <div class="card" onclick="showPage('diploma')">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600">
-            <h2>Diploma</h2>
-        </div>
-
-        <div class="card" onclick="showPage('iti')">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600">
-            <h2>ITI</h2>
-        </div>
-
-        <div class="card" onclick="showPage('agriculture')">
-            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600">
-            <h2>Agriculture</h2>
-        </div>
-
-        <div class="card" onclick="showPage('degree')">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600">
-            <h2>Degree</h2>
-        </div>
-
-        <div class="card" onclick="showPage('government')">
-            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600">
-            <h2>Government Jobs</h2>
-        </div>
-
-    </div>
-
-</div>
-
-<div id="careerPage" style="display:none;">
-    <div class="career-box">
-        <button onclick="goHome()">← Back</button>
-        <div id="careerContent"></div>
-    </div>
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+<section><h2 class="title">Project Proof</h2><div class="card"><a href="https://github.com/lakshman5432/Aws--files">AWS Project Repository</a></div></section>
+<section><h2 class="title">Internship</h2><div class="card"><b>MERN Stack Intern</b><br>Adhoc Networks (Apr 2025 - Jun 2025)</div></section>
+<section><h2 class="title">Education</h2><div class="card">B.Sc Computer Science - CGPA 7.94<br>Intermediate MPC - CGPA 6.7<br>SSC - GPA 6.4</div></section>
+<section><h2 class="title">Certification</h2><div class="card">AWS Introduction to Cloud Careers (edX)</div></section>
+<section><h2 class="title">Contact</h2><div class="card">📞 9381242544<br>✉️ nagalakshmankadari@gmail.com</div></section>
+<footer>© 2026 Kadari Naga Lakshman</footer></body></html>
